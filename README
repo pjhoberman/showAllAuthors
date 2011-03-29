@@ -1,6 +1,6 @@
 This code will display a table of all the authors on a blog.
 
-This code requires the ability to write php directly to a page or post. I chose to use <a href="http://wordpress.org/extend/plugins/exec-php/">exec-php</a>.
+This code requires the ability to write php directly to a page or post. I chose to use exec-php: http://wordpress.org/extend/plugins/exec-php.
 
 This will print out a two-column table. The left column will be a gravatar image based off the author's email address. The right column will have the author's name, bio, and twitter link. The name and image are both linked to the author's story page.
 
