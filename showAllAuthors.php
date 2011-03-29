@@ -10,8 +10,11 @@ foreach($authors as $a ){
 
 	$a = strtolower(str_replace(' ', '', $a));
 	if( !in_array( $a, $exclude ) ){
+		$auth = '';
 		$auth = get_user_by('login',$a);
-	//	print_r( $auth );
+		
+		if( $auth -> twitter != '' )
+			$twitter = $auth -> twitter == '' ? '' : '<span>Twitter: <a href="http://twitter.com/' . $auth -> twitter . '">@' . $auth -> twitter . '</a>';
 		
 		$hash = md5(strtolower(trim($auth -> user_email)));
 		?>
@@ -23,6 +26,8 @@ foreach($authors as $a ){
 				<strong><a href="http://www.denveroffthewagon.com/author/<?= $auth -> nickname ?>"><?= $auth -> display_name ?></a></strong>
 	
 				<p><?= $auth -> description ?></p>
+
+				<?= $twitter ?>
 			</td>
 		
 		</tr>
@@ -33,3 +38,5 @@ foreach($authors as $a ){
 
 ?>
 </table>
+</div>
+&nbsp;
